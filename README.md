@@ -47,6 +47,8 @@ The welcome sequence runs **once per script process**; restart JARVIS to trigger
 - Google Chrome and Cursor for the corresponding optional actions
 - An ElevenLabs account/API key for generated welcome speech
 
+**New to JARVIS?** Follow the [illustrated-style step-by-step setup guide](JARVIS-Setup-Guide.pdf) for Windows, ElevenLabs credentials, testing, and troubleshooting.
+
 ## Installation
 
 1. Download or clone the repository and open its folder in a terminal.
