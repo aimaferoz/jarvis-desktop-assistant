@@ -5,7 +5,7 @@ Desktop clap listener: reads the default microphone and logs when two loud trans
 
 Run:
   python -m pip install -r requirements.txt
-  python clap_listen.py
+  python jarvis.py
 
 Tuning (constants below):
   SAMPLE_RATE   — usually 44100 or 48000; match your device if needed.
@@ -75,7 +75,7 @@ INPUT_SILENT_RMS = 0.001
 
 # Spotify: "spotify:track:TRACK_ID" or https://open.spotify.com/track/...
 # YouTube: https://www.youtube.com/watch?v=...
-SONG_URI = ""  # Optional Spotify or YouTube link
+SONG_URI = "https://open.spotify.com/track/39shmbIHICJ2Wxnk1fPSdz?si=2900c75c2e2d4b82"
 
 # Cursor: focus existing instance (no -n). Set OPEN_NEW_CURSOR_ON_DOUBLE_CLAP for a new window as well.
 FOCUS_EXISTING_CURSOR_ON_DOUBLE_CLAP = True
@@ -83,8 +83,8 @@ OPEN_NEW_CURSOR_ON_DOUBLE_CLAP = False
 CURSOR_OPEN_FULLSCREEN = True
 
 # Google Chrome (fallback: default browser). URLs overridable in .env.
-OPEN_CLAUDE_CODE_IN_CHROME = False  # Opt in to browser launch
-OPEN_BINANCE_BTC_IN_CHROME = False  # Opt in to browser launch
+OPEN_CLAUDE_CODE_IN_CHROME = True
+OPEN_BINANCE_BTC_IN_CHROME = True
 OPEN_CHROME_FULLSCREEN = True
 # False = default Chrome profile (your normal user, extensions, cookies). True = temp dirs under %TEMP% per site.
 CHROME_SEPARATE_SITE_PROFILES = False
@@ -93,8 +93,11 @@ CLAUDE_CHROME_MONITOR = 1
 BINANCE_CHROME_MONITOR = 3
 
 JARVIS_WELCOME_ENABLED = True
-JARVIS_WELCOME_PHRASE = "Welcome back. Your desktop assistant is ready."
-
+JARVIS_WELCOME_PHRASE = (
+    "Welcome back Aima, hope you're doing well "
+    "I have opened up the following so you can see the latest updates. "
+    "Is there anything else you need help with."
+)
 # Seconds after launching SONG_URI before speaking (gives Spotify/browser time to start).
 JARVIS_AFTER_SONG_DELAY_S = 1.0
 # Save ElevenLabs PCM as WAV under .cache/jarvis_welcome/; replay skips the API when the key matches.
